@@ -1,0 +1,16 @@
+
+from flask import Flask, render_template
+import controllers
+
+app = Flask(__name__, template_folder='views')
+
+app.register_blueprint(controllers.album)
+app.register_blueprint(controllers.albums)
+app.register_blueprint(controllers.pic)
+app.register_blueprint(controllers.main)
+
+# comment this out using a WSGI like gunicorn
+# if you dont, gunicorn will ignore it anyway
+if __name__ == '__main__':
+    # listen on external IPs
+    app.run(host='eecs485-08.eecs.umich.edu', port=5663, debug=True)
