@@ -13,4 +13,4 @@ app.register_blueprint(controllers.main)
 # if you dont, gunicorn will ignore it anyway
 if __name__ == '__main__':
     # listen on external IPs
-    app.run(host='eecs485-08.eecs.umich.edu', port=5663, debug=True)
+    app.run(host='0.0.0.0', port=5663, debug=True)
